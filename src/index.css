@@ -5,16 +5,74 @@
   list-style: none;
   outline: none;
   
+  
 }
 
 body {
-direction: rtl;
-font-family: 'vazir' !important;
-background: linear-gradient(159deg, rgba(20, 179, 177, 1)0%, rgba(66,9,119,1) 100%);
 height: 100vh;
+font: inherit !important;
+}
+.header{
+  display: flex;
+  background: cadetblue;
+}
+.container{
+  width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 8vh;
+}
+.nav ul{
+  display: flex;
+  align-items: center;
+
+}
+.nav ul li {
+  color: #fff;
+  padding-left: 25px;
+
+}
+.switch{
+  display: inline-block;
+  width: 60px;
+  height: 35px;
+  position: relative;
+}
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+  cursor: pointer;
+}
+.slider::before{
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: #fff;
+  transition: .4s;
+  border-radius: 34px;
 }
 
- textarea{
-  height: 120px !important;
-  resize: none !important;
- }
+
+
+
+
+
