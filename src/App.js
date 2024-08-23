@@ -1,8 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 const App = () => {
+
+  const [dark,setDark]=useState(true);
+  const changeHandler=()=>{
+    setDark(!dark)
+    console.log(dark);
+  }
+
+
+
   return (
-    <div className='app'>
+    <div className={dark ? 'app' : 'dark-mode'}>
       <header className='header'>
         <div className='container'>
           <div className='nav'>
@@ -12,8 +21,8 @@ const App = () => {
               <li>Contact us</li>
             </ul>
             <label className='switch'>
-              <input type='checkbox' />
-              <span className='slider round'></span>
+              <input type='checkbox' onChange={changeHandler}/>
+              <span className={dark ? 'slider' : 'slider1'} ></span>
             </label>
 
           </div>
@@ -22,8 +31,8 @@ const App = () => {
       </header>
       <div className='content'>
         <div className='container'>
-          <h2>This is a light-mode project and now the page is light</h2>
-          <p>color of page is light</p>
+          <h2>{dark ? "This is a Light-Mode project and now the page is Light": "This is a Dark-Mode project and now the page is Dark"}</h2>
+          <p>{dark ? 'color of page is light':'color of page is dark'}</p>
 
         </div>
         <div className='container'>

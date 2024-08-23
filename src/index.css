@@ -16,6 +16,7 @@ font: inherit !important;
 .header{
   display: flex;
   background: cadetblue;
+  transition: .4s;
 }
 .container{
   width: 1300px;
@@ -60,6 +61,18 @@ font: inherit !important;
   border-radius: 34px;
   cursor: pointer;
 }
+.slider1{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #0a0a0a;
+  transition: .4s;
+  border-radius: 34px;
+  cursor: pointer;
+
+}
 .slider::before{
   content: '';
   position: absolute;
@@ -71,6 +84,18 @@ font: inherit !important;
   transition: .4s;
   border-radius: 34px;
 }
+.slider1::before{
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: #fff;
+  transition: .4s;
+  border-radius: 34px;
+  transform: translateX(26px);
+}
 .content{
   display: flex;
   flex-direction: column;
@@ -81,6 +106,10 @@ font: inherit !important;
 .container h2{
   font-size: large;
   margin: 10px 0;
+  transition: .4s;
+}
+.container p{
+  transition: .4s;
 }
 .cart{
   display: flex;
@@ -102,6 +131,17 @@ font: inherit !important;
 }
 .cart-item p{
   margin: 10px 0;
+}
+.dark-mode .header{
+  background: rgb(23, 74, 75);
+}
+.dark-mode{
+  background: rgb(26,26,26);
+  color: #fff;
+  transition: .4s;
+}
+.dark-mode .cart-item{
+  background: rgb(44,44,44);
 }
 
 
