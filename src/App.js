@@ -1,12 +1,28 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 
 const App = () => {
+  const getMode= ()=>{
+    const localtheme=localStorage.getItem("mode");
+    if(localtheme == null){
+      return true;
+    }else{
+      return JSON.parse(localStorage.getItem('mode'));
+    }
+  }
 
-  const [dark,setDark]=useState(true);
+  const [dark,setDark]=useState(getMode());
   const changeHandler=()=>{
     setDark(!dark)
     console.log(dark);
   }
+
+
+  useEffect(()=>{
+    localStorage.setItem("mode",JSON.stringify(dark));
+    
+  },[dark])
+
+  
 
 
 
